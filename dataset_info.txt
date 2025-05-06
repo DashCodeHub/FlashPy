@@ -1,0 +1,49 @@
+Training Dataset
+-------------------
+
+"A promising source of diverse and nearly unlimited text is web scrapes such as common crawl.
+while archives are many orders of magnitude larger but have data quality issue.
+
+Instead we created a new web scrape which emphasizes document quality. To do this we only 
+scraped web pages which has been curated and filtered by humans.
+
+As a starting point we scraped all outbound links from Reddit, a social media platform, which
+received at least 3 karma. This can be thought as a hueristic indicator for whether other users
+found the link interesting, educational or just funny.
+
+
+The resulting dataset, WebText, contains the text subset of these 45 million links. To extract
+the text from HTML we use a combination of the Dragnet ad Newspaper content extractors. All 
+results presented in this paper use a preliminary version of WebText which does not include links created after Dec 2017 and which after duplication and some heuristics based cleadning contains slightly over 8 million documents for total over 40 GB text.
+BUT IT WAS NEVER RELEASED
+
+CURRENTLY, Most of the training models are done on RedPajama Dataset, or SilmPajama which is
+a subset of SlimPajama dataset. It is a mix of all of the dataset (Commoncrawl, Wikipedia, 
+etc.).
+
+
+Another good dataset is called FineWeb dataset, a new larg-scale (15-trillion token, 
+44TB space). FineWeb is derived from 96 CommonCrawl snapshots and produces better performing
+LLMs than other pretraining datasets.
+
+A subset of FineWeb constructed using scalable automated high quality annotations for 
+educational value, which outperforms  all openly accessible web-datasets on a number of 
+educational benchmarks such as MMLU, ARC, OpenBookQA.
+FineWebEdu is available in two sizes/filterning level: 1.3 Trillion (very high educational
+content) and 5.4 trillion (high educational content tokens) (all tokens are measured with 
+GPT-2 tokenizer)
+
+All the data is available in HUGGINGFACE
+
+(Smaller) sample versions
+----------------------------
+Along with config default, we can also download the following configs:
+
+	Sample - 350BT: a subset randomly sampled from the whole dataset of around 350B gpt2
+				gpt-2 tokens
+	Sample - 100BT: a subset randomly sampled from the whole dataset of around 100B gpt2
+			tokens
+	Sample - 10BT: a subset randomly sampled from the whole dataset of around 10B gpt2 
+			tokens
+   
+"
